@@ -1,0 +1,9 @@
+@echo off
+echo Installing Python packages from requirments.txt...
+pip install -r requirments.txt
+
+echo Opening Start.bat...
+start Start.bat
+
+echo Deleting Setup.bat...
+del Setup.bat
