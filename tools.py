@@ -34,7 +34,9 @@ def ip_lookup():
     print_aqua("IP Lookup:")
 
     # Get user input for IP address or domain name
+    print("\033[96m", end="")  # Set aqua color
     target = input("Enter an IP address or domain name: ")
+    print("\033[0m", end="")  # Reset color to default
 
     try:
         # Perform the IP lookup
@@ -51,18 +53,26 @@ def ip_lookup():
         print_aqua(f"Location: {data.get('loc', 'N/A')}")
         print_aqua(f"Organization: {data.get('org', 'N/A')}")
 
+        print("\033[96m", end="")  # Set aqua color
         input("Press Enter to continue...")
+        print("\033[0m", end="")
     except KeyboardInterrupt:  # Handle Ctrl+C gracefully
         print_aqua("IP Lookup canceled.")
     except socket.gaierror:
         print_aqua(f"Could not resolve the host: {target}")
+        print("\033[96m", end="")
         input("Press Enter to continue...")
+        print("\033[0m", end="")
     except requests.exceptions.RequestException as e:
         print_aqua(f"An error occurred during geolocation lookup: {e}")
+        print("\033[96m", end="")
         input("Press Enter to continue...")
+        print("\033[0m", end="")
     except Exception as e:
         print_aqua(f"An error occurred: {e}")
+        print("\033[96m", end="")
         input("Press Enter to continue...")
+        print("\033[0m", end="")
 
 # Function for the Tools menu
 def tools_menu():
@@ -73,7 +83,9 @@ def tools_menu():
         print_aqua("1. IP Lookup")
         print_aqua("2. Tool 2")
         print_aqua("3. Back to Main Menu")
+        print("\033[96m", end="")  # Set aqua color
         choice = input("Enter your tool choice (or '3' to go back to the Main Menu): ")
+        print("\033[0m", end="")  # Reset color to default
 
         if choice == "1":
             ip_lookup()  # Call the IP Lookup function
@@ -94,7 +106,9 @@ def main_menu():
         print_aqua("1. Tools")
         print_aqua("2. Settings")
         print_aqua("3. Exit")
+        print("\033[96m", end="")  # Set aqua color
         choice = input("Enter your choice: ")
+        print("\033[0m", end="")  # Reset color to default
 
         if choice == "1":
             tools_menu()  # Call the Tools menu
