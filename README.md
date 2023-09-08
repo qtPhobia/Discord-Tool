@@ -1,2 +1,2 @@
-# Discord Tool
+# Multi Tool
  Discord Multi Tool
